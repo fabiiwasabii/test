@@ -192,6 +192,9 @@
   </main>
 
   <script>
+    /* ---------- EMAILJS INIT ---------- */
+    emailjs.init("Ft8ozdQoHgk8IKdH4");
+    
     const zone    = document.getElementById("zone");
     const yesBtn  = document.getElementById("yesBtn");
     const noBtn   = document.getElementById("noBtn");
@@ -316,8 +319,14 @@
       result.style.display = "block";
       resizeConfettiCanvas();
       fullScreenConfetti();
+
+       // Send email notification via EmailJS
+      emailjs.send("service_6l128yu", "template_m8m82pp", {
+        message: "Someone clicked Yes! Ty misses Fabi 💕"
+      }).catch(() => {});
     });
   </script>
 </body>
 </html>
+
 
